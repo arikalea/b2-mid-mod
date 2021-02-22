@@ -15,7 +15,8 @@ RSpec.describe "the Mechanic show page" do
 
     expect(page).to have_content("Name: #{@mechanic1.name}")
     expect(page).to have_content("Years of experience: #{@mechanic1.years_experience}")
-    expect(page).to have_content(@ride1, @ride2)
+    expect(page).to have_content('The Frog Hopper')
+    expect(page).to have_content('Fahrenheit')
     # expect(page).to_not have_content(@ride3)
   end
 end
