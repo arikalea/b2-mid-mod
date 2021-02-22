@@ -2,5 +2,7 @@
 <h4><%= "Years of experience: #{@mechanic.years_experience}" %></h4><br>
 
 <% @mechanic.rides.each do |ride| %>
-  <%= ride.name %>
+  <% if ride.open == true %>
+    <%= ride.name %>
+  <% end %>
 <% end %>
