@@ -1,8 +1,11 @@
 <h2><%= "Name: #{@mechanic.name}" %></h2>
 <h4><%= "Years of experience: #{@mechanic.years_experience}" %></h4><br>
 
+<h3>Mechanics Workload:</h3>
 <% @mechanic.thrill_order.each do |ride| %>
   <% if ride.open == true %>
     <%= ride.name %>
   <% end %>
 <% end %>
+
+<%= link_to "Add Ride", "/mechanics/#{@mechanic.id}/rides/new" %>

@@ -7,7 +7,7 @@ RSpec.describe "the Mechanic show page" do
     @ride1= @mechanic1.rides.create!(name: 'The Frog Hopper', thrill_rating: 4, open: true)
     @ride2= @mechanic1.rides.create!(name: 'Fahrenheit', thrill_rating: 8, open: true)
     @ride3= @mechanic1.rides.create!(name: 'The Kiss Raise', thrill_rating: 5, open: false)
-    @ride4= @mechanic2.rides.create!(name: 'The Zipper', thrill_rating: 7, open: true)
+    @ride4= Ride.create!(name: 'The Zipper', thrill_rating: 7, open: true)
   end
 
   it 'Display mechanics attributes and rides' do
@@ -20,5 +20,15 @@ RSpec.describe "the Mechanic show page" do
     expect(page).to_not have_content('The Kiss Raise')
   end
 
+  it 'See form to add new ride' do
+    visit "/mechanics/#{@mechanic1.id}"
 
+    click_on "Add Ride"
+
+    fill_in :ride_id, with: @ride4.id
+    click_on "Submit"
+
+    expect(current_path).to eq("/mechanics/#{@mechanic1.id}")
+    expect(page).to have_content('The Zipper')
+  end
 end
