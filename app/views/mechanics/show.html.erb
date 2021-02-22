@@ -1,7 +1,7 @@
 <h2><%= "Name: #{@mechanic.name}" %></h2>
 <h4><%= "Years of experience: #{@mechanic.years_experience}" %></h4><br>
 
-<% @mechanic.rides.each do |ride| %>
+<% @mechanic.thrill_order.each do |ride| %>
   <% if ride.open == true %>
     <%= ride.name %>
   <% end %>

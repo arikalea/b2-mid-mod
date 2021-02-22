@@ -19,4 +19,6 @@ RSpec.describe "the Mechanic show page" do
     expect(page).to have_content('Fahrenheit')
     expect(page).to_not have_content('The Kiss Raise')
   end
+
+
 end
