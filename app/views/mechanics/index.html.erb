@@ -1,0 +1,9 @@
+<h1>All Mechanics</h1>
+<ul>
+<% @mechanics.each do |mechanic| %>
+    <li><%= "Name: #{mechanic.name}" %>
+    <li><%= "Years of experience: #{mechanic.years_experience}" %><br>
+<% end %>
+</ul>
+
+<h4>Average years of experience for all: <%= @mechanics.average_experience %></h4>
